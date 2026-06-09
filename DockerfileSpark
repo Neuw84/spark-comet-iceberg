@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN set -eux; \
     mkdir -p /opt; \
-    wget -q https://mirror.lyrahosting.com/apache/spark/spark-4.0.1/spark-4.1.0-bin-hadoop3.tgz -O /tmp/spark.tgz; \
+    wget -q https://mirror.lyrahosting.com/apache/spark/spark-4.1.0/spark-4.1.0-bin-hadoop3.tgz -O /tmp/spark.tgz; \
     tar -xzf /tmp/spark.tgz -C /opt; \
     ln -sT "/opt/spark-${SPARK_VERSION}-bin-hadoop3" "${SPARK_HOME}"; \
     rm -f /tmp/spark.tgz
