@@ -29,7 +29,7 @@ This repository provides a complete Spark cluster setup with:
 
 ## Requirements
 
-- **Hardware**: x86_64 machines (tested on EC2 c5.2xlarge)
+- **Hardware**: x86_64 machines (tested on EC2 c5.2xlarge) with AVX2 Instruction set.
 - **Software**: Docker & Docker Compose
 - **AWS**: S3 bucket with read/write permissions
 
@@ -71,17 +71,6 @@ Each test runs twice: once with Velox enabled, once with vanilla Spark, measurin
 
 Results vary based on data size, query complexity, and hardware but you should see here some performance gains.
 
-## Configuration
-
-### Spark Configuration
-Key Velox settings in the notebook:
-```python
-.config("spark.plugins", "org.apache.gluten.GlutenPlugin")
-.config("spark.memory.offHeap.enabled", "true")
-.config("spark.memory.offHeap.size", "8g")
-.config("spark.shuffle.manager", "org.apache.spark.shuffle.sort.ColumnarShuffleManager")
-```
-
 ### S3 Integration
 - Uses S3A connector with AWS SDK v2
 - Magic committers enabled for better write performance
@@ -115,6 +104,7 @@ You need to have permissions for your chosen S3 bucket.
 ```
 2. Attach the role to your EC2 instance
 3. No additional credential configuration needed
+4. See below if you plan to use Iceberg + Glue 
 
 **For local development:**
 - Configure AWS CLI: `aws configure`
