@@ -189,9 +189,7 @@ Notes:
   instance role via IMDS (ensure the metadata hop limit allows container access). For local
   development, pass `AWS_REGION`, `AWS_ACCESS_KEY_ID`, and `AWS_SECRET_ACCESS_KEY` into the
   `jupyter`, `spark-worker`, and `spark-worker2` services in `docker-compose.yaml`.
-- The database name `comet-tests` contains a hyphen, which Glue/Iceberg name validation rejects
-  by default. The notebook sets `glue.skip-name-validation=true` and quotes the name with
-  backticks (`` glue.`comet-tests` ``). A hyphen-free name (e.g. `comet_tests`) avoids this.
+
 
 ## Monitoring
 
