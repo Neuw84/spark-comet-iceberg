@@ -6,7 +6,7 @@ A Docker Compose template demonstrating Apache Spark performance improvements wi
 
 This repository provides a complete Spark cluster setup with:
 - **Apache Spark 4.1.0** with Hadoop 3.4.1
-- **Apache DataFusion Comet 0.16.0** as an alternative accelerator
+- **Apache DataFusion Comet 0.16.0** as accelerator
 - **JupyterLab** environment for interactive analysis
 - **S3A integration** with optimized committers and native Hadopp libraries
 - **Apache Iceberg 1.10.0** tables on an **AWS Glue** catalog (Comet notebook)
